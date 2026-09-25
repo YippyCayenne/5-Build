@@ -63,6 +63,11 @@ nav a:hover {
 main {
     padding: 1rem;
 }
+main ul {
+    list-style: none;
+    margin: 0rem;
+    padding: 0.5rem;
+}
 
 img {
     width:100%;
@@ -102,10 +107,35 @@ footer {
     margin-top: 1rem;
 }
 
+.card-row ul{
+    background-color: #1e293b;
+    padding: 1rem;
+    border: 4px solid #38bdf8;
+}
+
 /* ===== Media Query (Medium) ===== */
-/* write a media query for a screen with at least 800px */
-/* change the body's grid template to 1fr 300px */
-/* target the header, nav, and footer and style their grid-column to 1/-1 */
-/* target the nav and display it flex, spaceed around */
-/* target the .card-row to display flex */
-/* target the sections in .card-row witha width for 30% */
+
+@media screen and (min-width: 800px) {
+    body {
+        grid-template-columns:1fr 300px;
+    }
+    
+    header, nav, footer {
+        grid-column: 1/-1;
+    }
+    nav ul {
+        display: flex;
+        flex: space-around;
+        /*justify-content: center;*/
+    }
+.card-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.card-row section {
+    width: 30%;
+}
+}
